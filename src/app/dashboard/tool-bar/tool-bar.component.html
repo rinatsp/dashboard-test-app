@@ -1,0 +1,18 @@
+<div class="flex flex-row" [formGroup]="form">
+  <div class="flex flex-col w-full min-w-[200px] h-15 p-2">
+    <label for="timeInterval"> Time, ms</label>
+    <input id="timeInterval" type='number' formControlName="timeInterval">
+  </div>
+  <div class="flex flex-col w-full min-w-[200px] h-15 p-2">
+    <label for="arraySize"> Array Size</label>
+    <input id="arraySize" type='number' formControlName="arraySize">
+  </div>
+  <div class="flex flex-col w-full min-w-[200px] h-15 p-2">
+    <label for="additionalIds">Additional Ids</label>
+    <input id="additionalIds" type='text' formControlName="additionalIds">
+    <div *ngIf="form.controls['additionalIds']?.errors?.['pattern']">
+      <p class="text-red-600">Additional Ids has wrong pattern</p>
+    </div>
+  </div>
+</div>
+
